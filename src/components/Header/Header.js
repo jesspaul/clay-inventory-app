@@ -1,16 +1,21 @@
 import './Header.css';
 import { login, logout } from '../../services/firebase';
+import { Link } from 'react-router-dom';
 
 const Header = ({ user }) => {
     return (
         <div className="Header">
-            <h1>Clay Inventory App</h1>
+            <Link to='/'><h1>Clay Inventory App</h1></Link>
+            
             <ul>
-                <li>Brand</li>
-                <li>Color</li>
+                <Link to='/brands'><li>Brands</li></Link>
+                <Link to='/colors'><li>Colors</li></Link>
                 {
                     user ? 
+                    <>
+                    <Link to='/inventory'><li>My Inventory</li></Link>
                     <li onClick={logout}>Logout</li>
+                    </>
                     :
                     <li onClick={login}>Login</li>
                 }
