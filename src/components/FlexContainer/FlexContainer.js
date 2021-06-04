@@ -1,13 +1,13 @@
 import './FlexContainer.css';
-import Category from '../Category/Category';
+import Label from '../Label/Label';
 
 const FlexContainer = ({array}) => {
     return (
         <div className="FlexContainer">
             {
-                    array.map((item, idx) => 
-                        <Category
-                            name={item}
+                    array.map((name, idx) => 
+                        <Label
+                            name={name}
                             key={idx}
                         />
                     )

@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import Brands from './pages/Brands/Brands';
 import Inventory from './pages/Inventory/Inventory';
 import Colors from './pages/Colors/Colors';
+import Category from './pages/Category/Category';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -16,11 +17,13 @@ function App() {
     const cancelSubscription = auth.onAuthStateChanged(userInfo => {
       setUser(userInfo);
     });
-
     return function() { // cleanup function
       cancelSubscription();
     }
   }, [user]);
+
+  const brandsArray = ['Premo', 'Fimo', 'Sculpey III'];
+  const colorsArray = ['Red', 'Pink', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'White', 'Black', 'Texture'];
 
   return (
     <div className="App">
@@ -30,10 +33,16 @@ function App() {
           <Home />
         } />
         <Route exact path = '/brands' render={(props) => 
-          <Brands />
+          <Category
+            category='Brands'
+            array={brandsArray}
+          />
         } />
         <Route exact path = '/colors' render={(props) => 
-          <Colors />
+          <Category
+          category='Colors'
+          array={colorsArray}
+        />
         } />
         <Route exact path = '/inventory' render={(props) => 
           <Inventory />
