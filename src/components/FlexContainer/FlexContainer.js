@@ -1,4 +1,4 @@
-import './FlexContainer';
+import './FlexContainer.css';
 import Category from '../Category/Category';
 
 const FlexContainer = ({array}) => {
