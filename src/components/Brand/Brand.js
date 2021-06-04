@@ -1,12 +1,12 @@
-import Item from "../Item/Item"
+import Clay from "../Clay/Clay"
 
 const Brand = () => {
     return (
         <div className="Brand">
             Brand Name
-            <Item />
-            <Item />
-            <Item />
+            <Clay />
+            <Clay />
+            <Clay />
         </div>
     );
 }
