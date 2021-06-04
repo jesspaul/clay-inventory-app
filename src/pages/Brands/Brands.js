@@ -1,11 +1,14 @@
-import Brand from '../../components/Brand/Brand';
+import FlexContainer from '../../components/FlexContainer/FlexContainer';
 import './Brands.css';
 
 const Brands = () => {
+    const brandsArray = ['Premo', 'Fimo', 'Sculpey III'];
     return (
         <div className="Brands">
-            Brands Page!
-            <Brand />
+            <h2>Brands</h2>
+            <FlexContainer
+                array={brandsArray}
+            />
         </div>
     );
 }
