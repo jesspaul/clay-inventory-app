@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Brands from './pages/Brands/Brands';
+import Inventory from './pages/Inventory/Inventory';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,6 +30,9 @@ function App() {
         } />
         <Route exact path = '/brands' render={(props) => 
           <Brands />
+        } />
+        <Route exact path = '/inventory' render={(props) => 
+          <Inventory />
         } />
       </Switch>
     </div>
