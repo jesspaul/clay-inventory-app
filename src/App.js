@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { auth } from './services/firebase';
+import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import Brand from './components/Brand/Brand';
 import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+import Brands from './pages/Brands/Brands';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,9 +23,14 @@ function App() {
   return (
     <div className="App">
       <Header user={user} />
-      <Brand />
-      <Brand />
-      <Brand />
+      <Switch>
+        <Route exact path = '/' render={(props) => 
+          <Home />
+        } />
+        <Route exact path = '/brands' render={(props) => 
+          <Brands />
+        } />
+      </Switch>
     </div>
   );
 }
